@@ -1,7 +1,7 @@
 
 import unittest
 import json
-
+import requests
 
 import os
 import sys
@@ -9,8 +9,8 @@ import sys
 # 相对路径的import
 # sys.path.append("../")
 # 绝对路径的import
-sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../")
-# from common.utils import *
+# sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../")这个也可以，下面的也成
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from commons.getResponse import HttpRequestResponse
 
 class MyTest(unittest.TestCase):
@@ -91,6 +91,7 @@ class MyTest(unittest.TestCase):
             "bookname": "接口来自moco",
             "checkstatus": "on"
         }
-        get_json = new_get.get(url, params=params)
+        get_json,r = new_get.get(url, params=params)
         print("get_json---", get_json)
-        self.assertEqual('successed', get_json['reason'], "是状态吗")
+        if r.status_code==200:
+            self.assertEqual('successed', get_json['reason'], "是状态吗")
