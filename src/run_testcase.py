@@ -91,7 +91,10 @@ class MyTest(unittest.TestCase):
             "bookname": "接口来自moco",
             "checkstatus": "on"
         }
-        get_json,r = new_get.get(url, params=params)
+        get_json,status_code,s = new_get.get(url, params=params)
         print("get_json---", get_json)
-        if r.status_code==200:
+        if status_code==200:
             self.assertEqual('successed', get_json['reason'], "是状态吗")
+            print('断言结束')
+        else:
+            print('断言结果不符合预期')
