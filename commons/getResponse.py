@@ -9,6 +9,10 @@ requests模块中，r.json()为Requests中内置的JSON解码器
 if status_code==200:
             self.assertEqual('successed', json_r['reason'], "是状态吗")
 '''
+# 备用{'content-Type':'application/x-www-form-urlencoded;charset=UTF-8'}
+# 备用{'Content-Type':'application/json;charset=utf-8'}
+
+#返回json状态的响应，响应状态码，响应时间
 
 class HttpRequestResponse:
     def get(self, url, params=None, headers=None):
@@ -26,7 +30,7 @@ class HttpRequestResponse:
         except Exception as e:
             print('GET请求报错--', e)
 
-    def post_form(self, url, data, headers=None):
+    def post_form(self, url, data, headers={'content-Type':'application/x-www-form-urlencoded'}):
         print('POST_FORM请求url--', url)
         print('POST_FORM请求参数--', data)
         try:
@@ -41,7 +45,7 @@ class HttpRequestResponse:
         except Exception as e:
             print('POST_FORM请求报错--', e)
 
-    def post_json(self, url, data, headers=None):
+    def post_json(self, url, data, headers={'Content-Type':'application/json'}):
         print('POST_JSON请求url--', url)
         print('POST_JSON请求参数--', data)
         try:
@@ -55,6 +59,14 @@ class HttpRequestResponse:
             return json_r,status_code,time
         except Exception as e:
             print('POST_JSON请求报错--', e)
+            return {}
+
+
+
+
+
+
+            
 '''
 # get
 new_get = HttpRequestResponse()
@@ -63,8 +75,10 @@ params = {
     "bookname": "接口来自moco",
     "checkstatus": "on"
 }
-get_json = new_get.get(url, params=params)
+get_json,status_code,time = new_get.get(url, params=params)
 print("get_json---", get_json)
+print("GET响应状态码=", status_code)
+print("GET接口的响应时间=", time, '秒')
 
 # post_form
 newForm = HttpRequestResponse()
@@ -76,8 +90,10 @@ data = {
     "username": "xiaoming",
     "pwd": "123456"
 }
-form_json=newForm.post_form(url,data=data,headers=headers)
+form_json,status_code,time=newForm.post_form(url,data=data,headers=headers)
 print("form_json---",form_json)
+print("POST_FORM响应状态码=", status_code)
+print("POST_FORM接口的响应时间=", time, '秒')
 
 #post_json
 newJson = HttpRequestResponse()
@@ -89,18 +105,16 @@ data = {
     "username": "xiaoqiang",
     "pwd": "123456"
 }
-json_json=newJson.post_json(url,data,headers)
+json_json,status_code,time=newJson.post_json(url,data,headers)
 print("json_json---",json_json)
+print("POST_JSON响应状态码=", status_code)
+print("POST_JSON接口的响应时间=", time, '秒')
+'''
 
 
 
-
-
-
+'''
  def test_m4(self):
-        import sys
-        sys.path.append('..')
-        from tools.getResponse import HttpRequestResponse
 
         # get
         new_get = HttpRequestResponse()
@@ -109,9 +123,13 @@ print("json_json---",json_json)
             "bookname": "接口来自moco",
             "checkstatus": "on"
         }
-        get_json = new_get.get(url, params=params)
+        get_json,status_code,time= new_get.get(url, params=params)
         print("get_json---", get_json)
-        self.assertEqual('successed',get_json['reason'],"是状态吗")
+        if status_code==200:
+            self.assertEqual('successed', get_json['reason'], "是状态吗")
+            print('断言结束')
+        else:
+            print('断言结果不符合预期')
 
 
 '''

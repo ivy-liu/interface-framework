@@ -1,4 +1,126 @@
+import os
+import sys
+import re
 
+from openpyxl import load_workbook
+from interface_test import InterfaceTest
+# from commons import log
+
+
+
+'''
+本class：
+遍历课运行的所有case
+每个case调用intercase_test
+参数关联
+'''
+
+
+
+
+class RunTestCase:
+    def __init__(self,log_file):
+        global log
+        log=log.Log(log_file)
+
+
+#获取、执行用例
+    def run(self,testcase_file,report_file):
+        #对case处理
+        testcase_file=os.path.join(os.getcwd(),testcase_file)
+        if not os.path.exists(testcase_file):
+            log.error('testcase_file,测试用例文件不存在，去哪了')
+            sys.exit()
+
+        wb=load_workbook(testcase_file)
+        table=wb.get_shert_by_name(wb.get_sheet_names()[1])#选择第二个sheet
+
+
+
+
+
+#遍历所有case
+for i in range(2,table.max_row+1):
+    #判断用例中是否执行 yes执行，否则跳过
+    if table.cell(row=i,column=10).value.replace('\n','').replace('\r',''):
+        continue
+    
+    #获取excel中数据,拿掉换行、回车
+    num=str(int(table.cell(row=i,column=1).value)).replace('\n','').replace('\r','')
+
+    api_purpose=table.cell(row=i,column=2).value.replace('\n','').replace('\r','')
+
+    api_host=table.cell(row=i,column=3).value.replace('\n','').replace('\r','')
+    
+    request_url=table.cell(row=i,column=4).value.replace('\n','').replace('\r','')
+
+    request_method=table.cell(row=i,column=5).value.replace('\n','').replace('\r','')
+
+    request_data_type=table.cell(row=i,column=6).value.replace('\n','').replace('\r','')
+
+    request_data=table.cell(row=i,column=7).value.replace('\n','').replace('\r','')
+
+    chect_point=table.cell(row=i,column=8).value.replace('\n','').replace('\r','')
+
+    correlation=table.cell(row=i,column=9).value
+   
+
+    #如果把请求参数发给到了txt中，则读取里面的内容。这里注意txt编码必须utf-8
+    if os.path.exists(request_data):
+        fopen=open(request_data,encoding='utf-8')
+        request_data=fopen.readline()
+        fopen.close()
+
+    '''
+    再request_data中查找是否存在需要关联的请求数据
+    关联参数的处理再后面进行
+    '''
+    for keyword in correlationDict:
+        if request_data.find(keyword)>0:
+            request_data=request_data.replace(keyword,str(correlationDict[keyword]))
+
+    #将准备好的所有数据传入下面的方法进行接口测试
+    it=InterfaceTest()
+    status,resp=it.interface_test(num,api_purpose,api_host,request_url,request_data,check_point,request_method,request_data_type,i,table,log)
+
+    #关联参数处理
+    if correlation !=None:
+        correlation=correlation.replace('\n','').replace('\r','').split(';')
+
+
+
+
+
+
+
+    #save the file
+    wb.save(testcase_file)
+
+    #切换操作表格
+    # ws=table.create_sheet('testsheet01')
+    # ws1=table.active
+    # ws2=table['testsheet']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 import unittest
 import json
 import requests
@@ -20,9 +142,9 @@ class MyTest(unittest.TestCase):
 
         full_url = url+path
         print("POST请求完整url=", full_url)
-        headers = {
-            "Content-Type": "application/x-www-form-urlencoded"
-        }
+        # headers = {
+        #     "Content-Type": "application/x-www-form-urlencoded"
+        # }
         data = {
             "username": "xiaoming",
             "pwd": "123456"
@@ -30,13 +152,13 @@ class MyTest(unittest.TestCase):
 
         print("POST请求参数=", data)
 
-        r = requests.post(full_url, data=data, headers=headers)
-        print("POST响应状态码=", r.status_code)
-        # 'Content-Type': 'application/json; charset=gbk'
-        print("POST响应头=", r.headers)
-        print("POST响应结果（json类型）=", r.text)
-        print("POST接口的响应时间=", r.elapsed.total_seconds(), '秒')
-        print('r1-', r)
+        new_PostJson=HttpRequestResponse()
+        form_json,status_code,time = new_PostJson.post_form(full_url, data=data)
+        if status_code==200:
+            self.assertEqual('successed', form_json['reason'], "响应不符合预期")
+            print(path,"接口的响应时间=", time, '秒')
+        else:
+            print('响应状态非200')
 
     def test_m2(self):
         url = "http://localhost:12306"
@@ -44,25 +166,25 @@ class MyTest(unittest.TestCase):
 
         full_url = url+path
         print("POST请求完整url=", full_url)
-        headers = {
-            "Content-Type": "application/json"
-        }
+        # headers = {
+        #     "Content-Type": "application/json"
+        # }
         data = {
             "username": "xiaoqiang",
             "pwd": "123456"
         }
-
         print("POST请求参数=", data)
-
-        r = requests.post(full_url, json=data, headers=headers)
-        print("POST响应状态码=", r.status_code)
-        # 'Content-Type': 'application/json; charset=gbk'
-        print("POST响应头=", r.headers)
-        print("POST响应结果（json类型）=", r.text)
-        print("POST接口的响应时间=", r.elapsed.total_seconds(), '秒')
-        print('r2-', r)
+        new_PostJson=HttpRequestResponse()
+        json_json,status_code,time = new_PostJson.post_json(full_url, data=data)
+        if status_code==200:
+            self.assertEqual('successed', json_json['reason'], "响应不符合预期")
+            print(path,"接口的响应时间=", time, '秒')
+        else:
+            print('响应状态非200')
 
     def test_m3(self):
+        # get
+        new_get = HttpRequestResponse()
         url = "http://localhost:12306"
         path = "/book_info"
 
@@ -73,28 +195,11 @@ class MyTest(unittest.TestCase):
             "bookname": "接口来自moco",
             "checkstatus": "on"
         }
-        print("GET请求参数=", params)
-
-        # 以json形式提交要写，不写默认以form形式提交
-        headers = {}
-
-        r = requests.get(full_url, params=params, headers=headers)
-        print("GET响应状态码=", r.status_code)
-        print('r3-', r)
-
-    def test_m4(self):
-
-        # get
-        new_get = HttpRequestResponse()
-        url = 'http://localhost:12306/book_info'
-        params = {
-            "bookname": "接口来自moco",
-            "checkstatus": "on"
-        }
-        get_json,status_code,s = new_get.get(url, params=params)
+        get_json,status_code,time= new_get.get(full_url, params=params)
         print("get_json---", get_json)
         if status_code==200:
-            self.assertEqual('successed', get_json['reason'], "是状态吗")
-            print('断言结束')
+            self.assertEqual('successed', get_json['reason'], "响应不符合预期")
+            print(path,"接口的响应时间=", time, '秒')
         else:
-            print('断言结果不符合预期')
+            print('响应状态非200')
+'''
