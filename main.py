@@ -4,8 +4,14 @@ import os
 import sys
 import unittest
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from src.run_testcase import MyTest
+from src.run_testcase import RunTestCase
 
+testcase_file='testcase_study.xlsx'#用例地址
+test=RunTestCase()
+test.run(testcase_file)
+# ${checkstatus}=[checkstatus]
+
+'''
 #1、一次全部运行 unittest.main()
 #2、TestSuite 测试套件：可自由组合测试 case，常用的方法是 addTest
 suite=unittest.TestSuite()
@@ -20,4 +26,4 @@ runner.run(suite)
 # runner=unittest.TextTestRunner(verbosity=2)
 # runner.run(all_suite)
 
-
+'''
