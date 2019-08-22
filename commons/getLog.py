@@ -42,6 +42,21 @@ class Log:
 
     def error(self,content):
         self.logger.error(content)
+    def critical(self,content):
+        self.logger.critical(content)
+    def warning(self,content):
+        self.logger.warning(content)
+    def info(self,content):
+        self.logger.info(content)
+    # def debug(self,content):
+    #     self.logger.debug(content)
+
+# 日志级别： debug < info < warning < error < critical
+# logging.debug('debug级别，最低级别，一般开发人员用来打印一些调试信息')
+# logging.info('info级别，正常输出信息，一般用来打印一些正常的操作')
+# logging.warning('waring级别，一般用来打印警信息')
+# logging.error('error级别，一般用来打印一些错误信息')
+# logging.critical('critical 级别，一般用来打印一些致命的错误信息,等级最高')
 
 # log=Log()
 # log.error('hahhahaha')

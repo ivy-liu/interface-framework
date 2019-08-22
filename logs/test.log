@@ -46,3 +46,122 @@
 2019-08-21 23:38:44,300 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
 2019-08-21 23:41:24,025 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 1登录-POST-FORM演示请求方法出错，请确认请求方法字段是否有误
 2019-08-21 23:41:24,025 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 13:56:57,415 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 1登录-POST-FORM演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 13:56:57,417 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 13:57:25,407 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 1登录-POST-FORM演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 13:57:25,407 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:06:40,029 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 1登录-POST-FORM演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:06:40,030 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:06:44,420 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 1登录-POST-FORM演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:06:44,420 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:29:44,509 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 1登录-POST-FORM演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:29:44,509 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:31:37,755 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 1登录-POST-FORM演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:31:37,756 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:34:59,809 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:36:43,619 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:37:07,080 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:38:11,587 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2 登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 14:38:48,306 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 2 登录-POST-JSON演示请求方法出错，请确认请求方法字段是否有误
+2019-08-22 15:02:29,555 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号4 接口名称=书籍详细信息接口成功200 响应时间0.006054秒
+
+2019-08-22 15:03:29,003 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.006021秒
+
+2019-08-22 15:03:29,008 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.003568秒
+
+2019-08-22 15:03:29,014 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003397秒
+
+2019-08-22 15:03:29,017 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号4 接口名称=书籍详细信息接口成功200 响应时间0.003224秒
+
+2019-08-22 15:11:45,249 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.006245秒
+
+2019-08-22 15:11:45,286 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.004149秒
+
+2019-08-22 15:11:45,314 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003616秒
+
+2019-08-22 15:11:45,342 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号4 接口名称=书籍详细信息接口成功200 响应时间0.004181秒
+
+2019-08-22 15:15:43,261 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.00632秒
+
+2019-08-22 15:17:29,861 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.00721秒
+
+2019-08-22 15:18:00,520 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.005903秒
+
+2019-08-22 15:18:00,548 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.003553秒
+
+2019-08-22 15:18:00,596 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.004614秒
+
+2019-08-22 15:18:47,067 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.005837秒
+
+2019-08-22 15:19:09,327 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.005352秒
+
+2019-08-22 15:19:09,364 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.004689秒
+
+2019-08-22 15:19:09,390 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003591秒
+
+2019-08-22 15:19:09,416 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号4 接口名称=书籍详细信息接口成功200 响应时间0.003743秒
+
+2019-08-22 15:22:56,594 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.005871秒
+
+2019-08-22 15:23:10,097 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.005993秒
+
+2019-08-22 15:23:10,132 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.003582秒
+
+2019-08-22 15:23:10,159 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.004489秒
+
+2019-08-22 15:23:35,562 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.006052秒
+
+2019-08-22 15:23:35,591 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.004643秒
+
+2019-08-22 15:23:35,624 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003566秒
+
+2019-08-22 15:25:39,714 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.006394秒
+
+2019-08-22 15:25:39,742 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.003441秒
+
+2019-08-22 15:25:39,768 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003851秒
+
+2019-08-22 15:33:19,449 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.006189秒
+
+2019-08-22 15:33:19,480 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.00337秒
+
+2019-08-22 15:33:19,505 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003352秒
+
+2019-08-22 15:36:22,730 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.005984秒
+
+2019-08-22 15:36:22,759 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.004554秒
+
+2019-08-22 15:36:22,785 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003352秒
+
+2019-08-22 15:37:44,154 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.005706秒
+
+2019-08-22 15:37:44,186 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.003471秒
+
+2019-08-22 15:37:44,213 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003579秒
+
+2019-08-22 15:39:26,988 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.005885秒
+
+2019-08-22 15:39:27,017 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.003529秒
+
+2019-08-22 15:39:27,055 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003324秒
+
+2019-08-22 15:39:46,587 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.005536秒
+
+2019-08-22 15:39:46,623 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.003955秒
+
+2019-08-22 15:39:46,652 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003517秒
+
+2019-08-22 15:59:08,927 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.006783秒
+
+2019-08-22 15:59:08,958 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.00373秒
+
+2019-08-22 15:59:08,989 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003843秒
+
+2019-08-22 15:59:09,026 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 4 书籍详细信息接口,失败！，[200
+2019-08-22 16:08:05,743 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.00619秒
+
+2019-08-22 16:08:05,777 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.006005秒
+
+2019-08-22 16:08:05,803 - d:\python_code\interface-framework\commons\getLog.py[line:50] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003149秒
+
+2019-08-22 16:08:05,829 - d:\python_code\interface-framework\commons\getLog.py[line:44] - ERROR: 4 书籍详细信息接口,失败！，[200 检查点验证未通过]

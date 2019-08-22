@@ -56,15 +56,11 @@ class RunTestCase:
             request_url=table.cell(row=i,column=4).value.replace('\n','').replace('\r','')
             # print('--请求地址--',request_url)          
             request_method=table.cell(row=i,column=5).value.replace('\n','').replace('\r','')
-            # print('--请求方法--',request_method)          
+            print('--请求方法--',request_method)          
             request_data_type=table.cell(row=i,column=6).value.replace('\n','').replace('\r','')
-            # print('--请求格式--',request_data_type)       
+            print('--请求格式--',request_data_type)       
             request_data=table.cell(row=i,column=7).value.replace('\n','').replace('\r','')
-            print('--请求数据1--',request_data)    
-            print('request_data啥类型1--',type(request_data))  #<class 'str'> 
-            request_data=json.dumps(request_data)
-            print('request_data啥类型2--',type(request_data)) #<class 'dict'>
-            print('--请求数据2--',request_data) 
+            print('--请求数据--',request_data)      
             check_point=table.cell(row=i,column=8).value.replace('\n','').replace('\r','')
             # print('--检查点--',chect_point)
             correlation=table.cell(row=i,column=9).value
@@ -88,7 +84,9 @@ class RunTestCase:
             #将准备好的所有数据传入下面的方法进行接口测试
             it=InterfaceTest()
             status,response=it.interface_test(num,api_purpose,api_host,request_url,request_data,check_point,request_method,request_data_type,i,table,log)
-
+            #save the file
+            wb.save(testcase_file)
+            
             
         #     #关联参数处理
         #     if correlation !=None:

@@ -59,7 +59,7 @@ class HttpRequestResponse:
             return json_r,status_code,time
         except Exception as e:
             print('POST_JSON请求报错--', e)
-            return {}
+       
 
 
 
