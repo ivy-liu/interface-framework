@@ -1,5 +1,12 @@
 # interface-framework
+
+* 配置case
+* runtestcase中选择文件，sheet
+* 邮箱信息添加，邮件信息配置
+
 ```python
+
+
 主程序入口 √
 遍历接口，发送请求，接受响应，判断结果 √
 保存结果（生成报告） √

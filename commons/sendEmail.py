@@ -63,19 +63,19 @@ class SendMail:
         smtp.quit()
 
 
-# 设置变量并调用发送邮件
-from1 = '发送出去的邮箱@163.com这里改上面smtp地址也要改，要记得' #发送出去的邮箱
-to = '接收的邮箱' #接收的邮箱
-# 接收的邮件地址
-title = '19-54 title python 全栈自动化测试 文件 行不行 图片'
-content = 'content正文 金马奖 金鸡奖 杨天宝'
-attach = 'D:\\python_code\\re_Automation\\excel_demo.xlsx'#附件-文件
-pic = 'D:\\python_code\\re_Automation\\md_pic\\logging.FileHandler.png'#附件-图片
-print('-执行-')
+# # 设置变量并调用发送邮件
+# from1 = '发送出去的邮箱@163.com这里改上面smtp地址也要改，要记得' #发送出去的邮箱
+# to = '接收的邮箱' #接收的邮箱
+# # 接收的邮件地址
+# title = '19-54 title python 全栈自动化测试 文件 行不行 图片'
+# content = 'content正文 金马奖 金鸡奖 杨天宝'
+# attach = 'D:\\python_code\\re_Automation\\excel_demo.xlsx'#附件-文件
+# pic = 'D:\\python_code\\re_Automation\\md_pic\\logging.FileHandler.png'#附件-图片
+# print('-执行-')
 
-try:
-    smtpObj = SendMail()
-    smtpObj.send_mail(from1, to, title, content, type='plain', attach=attach, pic=pic)
-    print("邮件发送成功")
-except smtplib.SMTPException as ex:
-    print("Error: 无法发送邮件",ex)
+# try:
+#     smtpObj = SendMail()
+#     smtpObj.send_mail(from1, to, title, content, type='plain', attach=attach, pic=pic)
+#     print("邮件发送成功")
+# except smtplib.SMTPException as ex:
+#     print("Error: 无法发送邮件",ex)
