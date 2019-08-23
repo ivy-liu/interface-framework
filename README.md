@@ -4,6 +4,9 @@
 * runtestcase中选择文件，sheet
 * 邮箱信息添加，邮件信息配置
 
+
+![interface_framework.png](interface_framework.png)
+
 ```python
 
 
