@@ -66,11 +66,11 @@ class RunTestCase:
             correlation=table.cell(row=i,column=9).value
             print('--关联参数--',correlation)
 
-        #     #如果把请求参数发给到了txt中，则读取里面的内容。这里注意txt编码必须utf-8无bom格式的
-        #     if os.path.exists(request_data):
-        #         fopen=open(request_data,encoding='utf-8')
-        #         request_data=fopen.readline()
-        #         fopen.close()
+            # #如果把请求参数发给到了txt中，则读取里面的内容。这里注意txt编码必须utf-8无bom格式的
+            # if os.path.exists(request_data):
+            #     fopen=open(request_data,encoding='utf-8')
+            #     request_data=fopen.readline()
+            #     fopen.close()
 
             '''
             在request_data中查找是否存在需要关联的请求数据

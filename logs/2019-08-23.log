@@ -1,10 +1,10 @@
-2019-08-23 20:33:36,402 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.007241秒
+2019-08-23 20:44:40,566 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.006638秒
 
-2019-08-23 20:33:36,409 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.003949秒
+2019-08-23 20:44:40,573 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.00344秒
 
-2019-08-23 20:33:36,416 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003552秒
+2019-08-23 20:44:40,580 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.003339秒
 
-2019-08-23 20:33:36,424 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号4 接口名称=书籍详细信息接口成功200 响应时间0.004314秒
+2019-08-23 20:44:40,587 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号4 接口名称=书籍详细信息接口成功200 响应时间0.00338秒
 
-2019-08-23 20:33:36,433 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号5 接口名称=书籍详细信息接口2成功200 响应时间0.00448秒
+2019-08-23 20:44:40,593 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号5 接口名称=书籍详细信息接口2成功200 响应时间0.003231秒
 
