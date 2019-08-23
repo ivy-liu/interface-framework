@@ -56,15 +56,15 @@ class RunTestCase:
             request_url=table.cell(row=i,column=4).value.replace('\n','').replace('\r','')
             # print('--请求地址--',request_url)          
             request_method=table.cell(row=i,column=5).value.replace('\n','').replace('\r','')
-            print('--请求方法--',request_method)          
+            # print('--请求方法--',request_method)          
             request_data_type=table.cell(row=i,column=6).value.replace('\n','').replace('\r','')
-            print('--请求格式--',request_data_type)       
+            # print('--请求格式--',request_data_type)       
             request_data=table.cell(row=i,column=7).value.replace('\n','').replace('\r','')
             print('--请求数据--',request_data)      
             check_point=table.cell(row=i,column=8).value.replace('\n','').replace('\r','')
             # print('--检查点--',chect_point)
             correlation=table.cell(row=i,column=9).value
-            # print('--关联参数--',correlation)
+            print('--关联参数--',correlation)
 
         #     #如果把请求参数发给到了txt中，则读取里面的内容。这里注意txt编码必须utf-8无bom格式的
         #     if os.path.exists(request_data):
@@ -72,59 +72,55 @@ class RunTestCase:
         #         request_data=fopen.readline()
         #         fopen.close()
 
-        #     '''
-        #     在request_data中查找是否存在需要关联的请求数据
-        #     关联参数的处理在后面进行
-        #     '''
-        #     for keyword in correlationDict:
-        #         if request_data.find(keyword)>0:
-        #             request_data=request_data.replace(keyword,str(correlationDict[keyword]))
-
+            '''
+            在request_data中查找是否存在需要关联的请求数据
+            关联参数的处理在后面进行
+            '''
+            for keyword in correlationDict:
+                if request_data.find(keyword)>0:
+                    request_data=request_data.replace(keyword,str(correlationDict[keyword]))
 
             #将准备好的所有数据传入下面的方法进行接口测试
             it=InterfaceTest()
             status,response=it.interface_test(num,api_purpose,api_host,request_url,request_data,check_point,request_method,request_data_type,i,table,log)
-            #save the file
-            wb.save(testcase_file)
+       
+            #关联参数处理
+            if correlation !=None:
+                correlation=correlation.replace('\n','').replace('\r','').split(';')
+
+                for j in range(len(correlation)):
+                    #根据=把关联数据拆分
+                    param = correlation[j].split('=')
+                    print("param=",param)
+                    print("param[0]=",param[0])
+                    print("param[1]=", param[1])
+                    if len(param)==2:
+                        if param[1]==''or not re.search(r'^\[',param[1]) :#or not re.rearch()
+                            log.error(num+' '+api_purpose+'关联参数设置有误，请检查')
+                            continue
+                        # value=resp
+                        for key in param[1][1:-1].split(']['):#对第三个数据进行拆分，从下表1开始到末尾
+                            # print("key=",key)#key= checkstatus
+                            # print('key类型--',type(key))
+                            # print('response--',response)
+                            temp = response[key]
+                            print("temp=",temp)
+                            #因为中间处理的时候数据会有变化，所以在给一个新的值存储
+                            response = temp
+                            print('response=',response)
+
+                        #关联到的响应放到字典里，方便后续去遍历替换参数
+                        correlationDict[param[0]] = response
+                        print("correlationDict[param[0]]=", response)
+
+                    else:
+                        print("error")
+
+    
+        #save the file
+        wb.save(testcase_file)
             
-            
-        #     #关联参数处理
-        #     if correlation !=None:
-        #         correlation=correlation.replace('\n','').replace('\r','').split(';')
-
-
-        #         for j in range(len(correlation)):
-        #             #根据=把关联数据拆分
-        #             param = correlation[j].split('=')
-        #             print("param=",param)
-        #             print("param[0]=",param[0])
-        #             print("param[1]=", param[1])
-        #             if len(param)==2:
-        #                 if param[1]==''or not re.rearch(r'^\[',param[1]) :#or not re.rearch()
-        #                     log.error(num+' '+api_purpose+'关联参数设置有误，请检查')
-        #                     continue
-        #                 # value=resp
-        #                 for key in param[1][1:-1].split(']['):#对第三个数据进行拆分，从下表1开始到末尾
-        #                     print("key=",key)
-        #                     temp = response[key]
-        #                     print("temp=",temp)
-        #                     #因为中间处理的时候数据会有变化，所以在给一个新的值存储
-        #                     response = temp
-        #                     print('response=',response)
-
-        #                 #关联到的响应放到字典里，方便后续去遍历替换参数
-        #                 correlationDict[param[0]] = response
-        #                 print("correlationDict[param[0]]=", response)
-
-        #             else:
-        #                 print("error")
-
-
-
-
-
-
-            
+     
             # #save the file
             # wb.save()
 
@@ -132,19 +128,6 @@ class RunTestCase:
             # # ws=table.create_sheet('testsheet01')
             # # ws1=table.active
             # # ws2=table['testsheet']
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

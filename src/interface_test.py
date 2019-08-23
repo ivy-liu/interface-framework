@@ -49,6 +49,8 @@ class InterfaceTest:
             # pattern匹配的正则表达式；string要匹配的字符串。
             if re.search(check_point,response_json):
                 table.cell(row=i,column=11).value='成功'
+                myfont=Font(color=colors.BLACK)  #如果成功是黑色字体
+                table.cell(row=i,column=11).font=myfont#第二次出错了，这里是小写！！
                 table.cell(row=i,column=12).value=response_json
                 table.cell(row=i,column=13).value=time 
                 log.info('编号'+num+' '+'接口名称='+api_purpose+'成功'+str(status_code)+' '+'响应时间'+str(time)+'秒'+'\n')

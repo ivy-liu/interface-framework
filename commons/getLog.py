@@ -1,5 +1,6 @@
 import logging
 from logging import handlers
+import time,os
 
 class Log:
     level_relations = {
@@ -10,16 +11,30 @@ class Log:
         'crit':logging.CRITICAL
     }#日志级别关系映射
     
-    # when=D，新生成的文件名上会带上时间
-    def __init__(self,filename='logs\\test.log',level='info',when='D',backCount=3,fmt='%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s'):
-        self.logger = logging.getLogger(filename)
+    # when=D，新生成的文件名上会带上时间,
+    # 举个栗子，从今天执行到明天，会生成带有明天日期的文件，一天之内执行完，不会另外生成
+    def __init__(self,level='info',when='D',backCount=3,fmt='%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s'):
+        
+        t = time.strftime('%Y-%m-%d',time.localtime())  #将指定格式的当前时间以字符串输出
+        filename=t + '.log'
+        newfile='logs\\' + filename
+        if not os.path.exists(newfile):
+            f = open(newfile,'w') 
+            print ('文件创建 ',filename)
+            f.close()
+            print (newfile + " created.")
+        else:
+            print (newfile + " already existed.")
+
+
+        self.logger = logging.getLogger(newfile)
         format_str = logging.Formatter(fmt)#设置日志格式
         self.logger.setLevel(self.level_relations.get(level))#设置日志级别
         sh = logging.StreamHandler()#往屏幕上输出
         sh.setFormatter(format_str) #设置屏幕上显示的格式
         #  logging.handlers.RotatingFileHandler -> 按照大小自动分割日志文件，一旦达到指定的大小重新生成文件
         #  logging.handlers.TimedRotatingFileHandler  -> 按照时间自动分割日志文件 
-        th = handlers.TimedRotatingFileHandler(filename=filename,when=when,backupCount=backCount,encoding='utf-8')#往文件里写入#指定间隔时间自动生成文件的处理器
+        # th = handlers.TimedRotatingFileHandler(filename=newfile,when='m',backupCount=backCount,encoding='utf-8')#往文件里写入#指定间隔时间自动生成文件的处理器
         #实例化TimedRotatingFileHandler
         #interval是时间间隔，backupCount是备份文件的个数，如果超过这个个数，就会自动删除，when是间隔的时间单位，单位有以下几种：
         # S 秒
@@ -28,6 +43,9 @@ class Log:
         # D 天、
         # W 每星期（interval==0时代表星期一）
         # midnight 每天凌晨
+
+        th=logging.FileHandler(newfile,mode='w',encoding='utf-8')
+
         th.setFormatter(format_str)#设置文件里写入的格式
         self.logger.addHandler(sh) #把对象加到logger里
         self.logger.addHandler(th)
@@ -58,8 +76,11 @@ class Log:
 # logging.error('error级别，一般用来打印一些错误信息')
 # logging.critical('critical 级别，一般用来打印一些致命的错误信息,等级最高')
 
+# #测试数据
 # log=Log()
-# log.error('hahhahaha')
+# log.error('hahhahaha11111')
+# time.sleep(10)
+# log.error('哈哈呵')
 
 
 

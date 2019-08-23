@@ -1,0 +1,80 @@
+[
+  {
+    "description": "get接口-简易-模拟获取书记信息接口，get请求和相应，返回json描述，有木有都可以",
+    "request": {
+      "method": "get",
+      "uri": "/book_list"
+    },
+    "response": {
+      "json": {
+        "error_code": 0,
+        "reason": "successed",
+        "name": "返回来自book_list，传递给book_info",
+        "price": 666
+      },
+      "status": 200
+    }
+  },
+  {
+    "description": "get接口-模拟获取书籍信息接口，get请求和相应，返回json描述，有木有都可以",
+    "request": {
+      "method": "get",
+      "uri": "/book_info",
+      "queries": {
+        "bookname": "返回来自book_list，传递给book_info",
+        "checkstatus": "on"
+      }
+    },
+    "response": {
+      "json": {
+        "error_code": 0,
+        "reason": "successed",
+        "name": "是的，返回来自moco",
+        "price": 666
+      },
+      "status": 200
+    }
+  },
+  {
+    "description": "post接口-模拟登陆接口post_form，入参form形式，返回json数据",
+    "request": {
+      "headers":{"content-type":"application/x-www-form-urlencoded"},
+      "method": "post",
+      "uri": "/login1",
+      "forms": {
+        "username": "xiaoming",
+        "pwd": "123456"
+      }
+    },
+    "response": {
+      "json": {
+        "error_code": 0,
+        "reason": "successed",
+        "username": "小明",
+        "checkstatus": "on"
+      },
+      "status": 200
+    }
+  },
+  {
+    "description": "post接口-模拟登陆接口post_json，入参json形式，返回json数据",
+    "request": {
+      "headers":{"content-type":"application/json"},
+      "method": "post",
+      "uri": "/login2",
+      "json": {
+        "username": "xiaoqiang",
+        "pwd": "123456"
+      }
+    },
+    "response": {
+      "json": {
+        "error_code": 0,
+        "reason": "successed",
+        "username": "小强",
+        "checkstatus": "on"
+      },
+      "status": 200
+    }
+  }
+]

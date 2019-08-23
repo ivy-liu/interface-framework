@@ -1,0 +1,10 @@
+2019-08-23 18:14:50,371 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号1 接口名称=登录-POST-FORM演示成功200 响应时间0.00579秒
+
+2019-08-23 18:14:50,377 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.003332秒
+
+2019-08-23 18:14:50,383 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.002644秒
+
+2019-08-23 18:14:50,390 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号4 接口名称=书籍详细信息接口成功200 响应时间0.002848秒
+
+2019-08-23 18:14:50,396 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号5 接口名称=书籍详细信息接口2成功200 响应时间0.003252秒
+

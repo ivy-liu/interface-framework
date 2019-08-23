@@ -6,7 +6,8 @@ import unittest
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from src.run_testcase import RunTestCase
 
-testcase_file='testcase_study.xlsx'#用例地址
+testcase_file='testcase\\testcase_study.xlsx'#用例地址
+
 test=RunTestCase()
 test.run(testcase_file)
 # ${checkstatus}=[checkstatus]
