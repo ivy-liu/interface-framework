@@ -1,0 +1,5 @@
+2019-08-31 19:51:54,559 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号2 接口名称=登录-POST-JSON演示成功200 响应时间0.006261秒
+
+2019-08-31 19:51:54,577 - d:\python_code\interface-framework\commons\getLog.py[line:68] - INFO: 编号3 接口名称=获取书籍列表-GET演示成功200 响应时间0.00308秒
+
+2019-08-31 19:51:54,595 - d:\python_code\interface-framework\commons\getLog.py[line:62] - ERROR: 4 书籍详细信息接口,失败！，[200 检查点验证未通过]

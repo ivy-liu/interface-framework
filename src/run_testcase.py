@@ -117,6 +117,9 @@ class RunTestCase:
                         print("error")
 
         print('correlationDict--',correlationDict)
+
+
+
         #save the file
         wb.save(testcase_file)
             
@@ -130,91 +133,3 @@ class RunTestCase:
             # # ws2=table['testsheet']
 
 
-
-
-
-
-
-'''
-import unittest
-import json
-import requests
-
-import os
-import sys
-
-# 相对路径的import
-# sys.path.append("../")
-# 绝对路径的import
-# sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../")这个也可以，下面的也成
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from commons.getResponse import HttpRequestResponse
-
-class MyTest(unittest.TestCase):
-    def test_m1(self):
-        url = "http://localhost:12306"
-        path = "/login1"
-
-        full_url = url+path
-        print("POST请求完整url=", full_url)
-        # headers = {
-        #     "Content-Type": "application/x-www-form-urlencoded"
-        # }
-        data = {
-            "username": "xiaoming",
-            "pwd": "123456"
-        }
-
-        print("POST请求参数=", data)
-
-        new_PostJson=HttpRequestResponse()
-        form_json,status_code,time = new_PostJson.post_form(full_url, data=data)
-        if status_code==200:
-            self.assertEqual('successed', form_json['reason'], "响应不符合预期")
-            print(path,"接口的响应时间=", time, '秒')
-        else:
-            print('响应状态非200')
-
-    def test_m2(self):
-        url = "http://localhost:12306"
-        path = "/login2"
-
-        full_url = url+path
-        print("POST请求完整url=", full_url)
-        # headers = {
-        #     "Content-Type": "application/json"
-        # }
-        data = {
-            "username": "xiaoqiang",
-            "pwd": "123456"
-        }
-        print("POST请求参数=", data)
-        new_PostJson=HttpRequestResponse()
-        json_json,status_code,time = new_PostJson.post_json(full_url, data=data)
-        if status_code==200:
-            self.assertEqual('successed', json_json['reason'], "响应不符合预期")
-            print(path,"接口的响应时间=", time, '秒')
-        else:
-            print('响应状态非200')
-
-    def test_m3(self):
-        # get
-        new_get = HttpRequestResponse()
-        url = "http://localhost:12306"
-        path = "/book_info"
-
-        full_url = url+path
-        print("GET请求完整url=", full_url)
-
-        params = {
-            "bookname": "接口来自moco",
-            "checkstatus": "on"
-        }
-        get_json,status_code,time= new_get.get(full_url, params=params)
-        print("get_json---", get_json)
-        if status_code==200:
-            self.assertEqual('successed', get_json['reason'], "响应不符合预期")
-            print(path,"接口的响应时间=", time, '秒')
-        else:
-            print('响应状态非200')
-'''
